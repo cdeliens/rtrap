@@ -15,19 +15,18 @@ gem 'sass-rails'
 gem "meta_search",    '>= 1.1.0.pre'
 gem 'coffee-rails', '~> 3.2.1'
 gem 'bootstrap-sass'
+gem 'uglifier', '>= 1.0.3'
 
 gem 'omniauth'
+gem 'omniauth-twitter'
 
 gem "haml-rails"
 gem 'jquery-rails'
 
-
-  # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  # gem 'therubyracer', :platform => :ruby
-
- gem 'uglifier', '>= 1.0.3'
-
 gem 'jquery-rails'
+
+gem 'pry'
+gem 'pry-remote'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
