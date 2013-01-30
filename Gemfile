@@ -7,6 +7,8 @@ gem 'rails', '3.2.3'
 
 gem 'sqlite3'
 
+gem 'thin'
+gem 'faye'
 
 # Gems used only for assets and not required
 # in production nvironments by default.
@@ -19,6 +21,7 @@ gem 'uglifier', '>= 1.0.3'
 
 gem 'omniauth'
 gem 'omniauth-twitter'
+gem 'instagram'
 
 gem "haml-rails"
 gem 'jquery-rails'
