@@ -13,6 +13,7 @@ class ThirdPartySessionsController < ApplicationController
       auth = Authorization.find_or_create(auth_hash)
       # Create the session
       session[:user_id] = auth.user.id
+      puts "********************>>#{session[:user_id]}"
       render :text => "Welcome #{auth.user.name}!"
     end
   end
