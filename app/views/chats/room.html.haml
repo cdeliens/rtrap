@@ -4,11 +4,23 @@
     var public_subscription = client.subscribe('/messages/public', function(data) {
       $('<p></p>').html(data.username + ": " + data.msg).appendTo('#chat_room');
     });
+    var private_subscription = client.subscribe('/messages/private/#{session[:username]}', function(data) {
+      $('<p></p>').addClass('private').html(data.username + ": " + data.msg).appendTo('#chat_room');
+    });
     $('#new_message_form').submit(function(){
-      client.publish('/messages/public', {
-        username: "#{session[:username]}",
-        msg: $('#message').val()
-      });
+      if (matches = $('#message').val().match(/@(.+) (.+)/)) {
+        client.publish('/messages/private/' + matches[1], {
+          username: '#{session[:username]}',
+          msg: matches[2]
+        });
+      }
+      else {
+        // It's a public message
+        client.publish('/messages/public', {
+          username: '#{session[:username]}',
+          msg: $('#message').val()
+        });
+      }
       $('#message').val('');
       return false;
     });
