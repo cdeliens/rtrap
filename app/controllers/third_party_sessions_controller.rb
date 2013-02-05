@@ -9,14 +9,12 @@ class ThirdPartySessionsController < ApplicationController
       user = User.find(session[:user_id])
       user.add_provider(auth_hash)
       session[:username] = user.email
-      render :text => "You can now login using #{auth_hash["provider"].capitalize} too! This is my username: #{session[:username]}"
     else
       # Log him in or sign him up
       auth = Authorization.find_or_create(auth_hash)
       # Create the session
       session[:user_id] = auth.user.id
       session[:username] = auth.user.email
-      render :text => "Welcome #{auth.user.name}!"
     end
   end
 

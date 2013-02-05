@@ -6,7 +6,8 @@ Rtrap::Application.routes.draw do
   get   '/logout', :to => 'third_party_sessions#destroy', :as => :logout
   match '/auth/:provider/callback', :to => 'third_party_sessions#create'
   match '/auth/failure', :to => 'sessions#failure'
-
+  match 'signout', to: 'third_party_sessions#destroy', as: 'signout'
+  
   ActiveAdmin.routes(self)
   devise_for :admin_users, ActiveAdmin::Devise.config
 

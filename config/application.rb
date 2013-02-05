@@ -55,5 +55,8 @@ module Rtrap
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+
+    FACEBOOK_APP_ID = "487732591290570"
+    FACEBOOK_SECRET= "3a4fe8bcf72cf513f563b191d416bb31"
   end
 end
