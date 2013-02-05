@@ -8,12 +8,15 @@ Rtrap::Application.routes.draw do
   match '/auth/failure', :to => 'sessions#failure'
   match 'signout', to: 'third_party_sessions#destroy', as: 'signout'
   
+
+  devise_for :users
+  # resources :users, only: [:index, :show, :edit, :update]
+
   ActiveAdmin.routes(self)
   devise_for :admin_users, ActiveAdmin::Devise.config
 
   get  '/chatroom' => 'chats#room', :as => :chat
 
-  
-  root :to    => "third_party_sessions#new"
+  root :to    => "static_pages#home"
 
 end
