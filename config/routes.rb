@@ -7,12 +7,14 @@ Rtrap::Application.routes.draw do
   match '/auth/:provider/callback', :to => 'third_party_sessions#create'
   match '/auth/failure', :to => 'sessions#failure'
 
+  devise_for :users
+  resources :users
+
   ActiveAdmin.routes(self)
   devise_for :admin_users, ActiveAdmin::Devise.config
 
   get  '/chatroom' => 'chats#room', :as => :chat
 
-  
-  root :to    => "third_party_sessions#new"
+  root :to    => "static_pages#home"
 
 end
