@@ -8,7 +8,7 @@ Rtrap::Application.routes.draw do
   match '/auth/failure', :to => 'sessions#failure'
 
   devise_for :users
-  resources :users
+  # resources :users, only: [:index, :show, :edit, :update]
 
   ActiveAdmin.routes(self)
   devise_for :admin_users, ActiveAdmin::Devise.config
