@@ -33,3 +33,9 @@ gem 'omniauth-twitter'
 gem 'omniauth-facebook'
 gem 'instagram'
 
+group :test do
+  gem "rspec-rails", "= 2.9"
+  gem "factory_girl_rails"
+  gem "capybara", ">= 1.1.1"
+  gem 'faker'
+end
