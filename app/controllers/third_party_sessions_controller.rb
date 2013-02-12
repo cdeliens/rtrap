@@ -11,12 +11,14 @@ class ThirdPartySessionsController < ApplicationController
     else
       auth = Authorization.find_or_create(auth_hash)
       if auth
-        session[:user_id] = auth.user.id
-        session[:username] = auth.user.email
+        user = User.find_by_id auth.user.id
+        session[:user_id] = user.id
+        session[:username] = user.email
+        redirect_to profile_path(user.profile)
       else
-        raise "auth error"
+        redirect_to after_signup_path(:complete_profile, profile: auth.user.profile)
       end
-      redirect_to after_signup_path(:complete_profile, profile: auth.user.profile)
+      
     end
   end
 
