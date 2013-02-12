@@ -23,7 +23,7 @@ end
 gem 'bootstrap-sass'
 gem 'formtastic'
 gem 'formtastic-bootstrap'
-
+gem 'inherited_resources'
 gem 'wicked'
 gem "haml-rails"
 gem 'jquery-rails'

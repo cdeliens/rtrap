@@ -306,6 +306,7 @@ DEPENDENCIES
   guard-livereload
   guard-rails
   haml-rails
+  inherited_resources
   instagram
   jquery-rails
   meta_search (>= 1.1.0.pre)
