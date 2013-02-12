@@ -1,0 +1,10 @@
+%h1
+  Welcome #{@profile.full_name}
+
+%h2
+  1. Almost there:
+= semantic_form_for @profile do |f|
+  = f.input :email 
+  = f.input :gender,  :as => :select,      :collection => ["Male", "Female"]
+  = f.input :address, :input_html => {  :rows => 10, :cols => 20, :maxlength => 10  }
+  = f.action :submit, :as => :button, class: :btn-success

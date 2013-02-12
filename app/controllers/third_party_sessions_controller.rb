@@ -16,7 +16,7 @@ class ThirdPartySessionsController < ApplicationController
       else
         raise "auth error"
       end
-
+      redirect_to after_signup_path(:confirm_password, profile: auth.user.profile)
     end
   end
 

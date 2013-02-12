@@ -1,6 +1,8 @@
 .container
   %nav
     %ul#user_nav.nav.nav-tabs
+      %li
+        = image_tag @profile.image, width: 30, height: 30 , class: :profile_picture if @profile
       - if user_signed_in?
         %li
           %span= "Signed in as #{current_user.email}"

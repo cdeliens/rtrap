@@ -24,6 +24,7 @@ gem 'bootstrap-sass'
 gem 'formtastic'
 gem 'formtastic-bootstrap'
 
+gem 'wicked'
 gem "haml-rails"
 gem 'jquery-rails'
 gem 'activeadmin'
