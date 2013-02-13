@@ -57,8 +57,5 @@ module Rtrap
     config.assets.version = '1.0'
 
     config.assets.initialize_on_precompile=false
-    
-    FACEBOOK_APP_ID = "487732591290570"
-    FACEBOOK_SECRET= "3a4fe8bcf72cf513f563b191d416bb31"
   end
 end
