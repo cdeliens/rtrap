@@ -64,4 +64,6 @@ Rtrap::Application.configure do
   # Log the query plan for queries taking more than this (works
   # with SQLite, MySQL, and PostgreSQL)
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
+
+  FACEBOOK = {key: "307667586022891", secret: "629d4d3673d4d74a1dc26cbf2ea01dce", :namespace => 'bece-restaurant'}
 end
