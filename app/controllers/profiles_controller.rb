@@ -1,3 +1,3 @@
-class ProfilesController< InheritedResources::Base
+class ProfilesController < InheritedResources::Base
 
 end

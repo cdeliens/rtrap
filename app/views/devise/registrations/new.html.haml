@@ -1,7 +1,8 @@
 %h2 Sign up
 
-= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f|
-  = devise_error_messages!
+= form_for(resource, :as => resource_name, :url => after_signup_path(:complete_profile), :method => :get) do |f|
+  - if resource.errors.any?
+    %p= "There was an error, please try again."
   %div
     = f.label :email
     = f.email_field :email
