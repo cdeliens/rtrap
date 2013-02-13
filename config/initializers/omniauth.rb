@@ -4,5 +4,5 @@ Rails.application.config.middleware.use OmniAuth::Builder do
 end
 
 Rails.application.config.middleware.use OmniAuth::Builder do
-    provider :facebook, FACEBOOK_API_KEY, FACEBOOK_APP_SECRET
+    provider :facebook, FACEBOOK[:key], FACEBOOK[:secret]
 end
