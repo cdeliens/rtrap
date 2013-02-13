@@ -3,7 +3,7 @@ class ProfileFactory
     def facebook(user, auth_hash)
       translated_data = {image: auth_hash["info"]["image"],
         full_name: auth_hash["info"]["name"],
-        email: auth_hash["info"]["email"],
+        # user: { email: auth_hash["info"]["email"] },
         address: auth_hash["info"]["location"],
         gender: auth_hash["extra"]["raw_info"]["gender"]}
       factory user, translated_data
