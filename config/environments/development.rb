@@ -35,10 +35,7 @@ Rtrap::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
-  config.after_initialize do
-    FACEBOOK_API_KEY = "487732591290570"
-    FACEBOOK_APP_SECRET = "3a4fe8bcf72cf513f563b191d416bb31"
-  end
+
 
 
 end

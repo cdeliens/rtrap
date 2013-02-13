@@ -64,8 +64,4 @@ Rtrap::Application.configure do
   # Log the query plan for queries taking more than this (works
   # with SQLite, MySQL, and PostgreSQL)
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
-  config.after_initialize do
-    FACEBOOK_API_KEY = "307667586022891"
-    FACEBOOK_APP_SECRET = "629d4d3673d4d74a1dc26cbf2ea01dce"
-  end
 end
