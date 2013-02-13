@@ -65,5 +65,6 @@ Rtrap::Application.configure do
   # with SQLite, MySQL, and PostgreSQL)
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
 
+  TWITTER = {key: "ZJYrqXaFXSEnkpe7D14ICA", secret: "4orIT373rrNQBPcSj7yMG2hhlsStDhXdauII61qM"}
   FACEBOOK = {key: "307667586022891", secret: "629d4d3673d4d74a1dc26cbf2ea01dce", :namespace => 'bece-restaurant'}
 end

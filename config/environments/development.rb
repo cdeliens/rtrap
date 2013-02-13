@@ -36,6 +36,7 @@ Rtrap::Application.configure do
   # Expands the lines which load the assets
   config.assets.debug = true
   
+  TWITTER = {key: "PgCKBOxfUnEa0f0W1Oi3tQ", secret: "u8Cu09apHX2LQ4oKEvF0JT0KPzYfGmmHkPfizGisJM"}
   FACEBOOK = {key: "487732591290570", secret: "3a4fe8bcf72cf513f563b191d416bb31", :namespace => 'bece-restaurant'}
 
 
