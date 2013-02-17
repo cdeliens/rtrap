@@ -11,7 +11,6 @@ class AfterSignupController < ApplicationController
     @profile = Profile.find_by_id(params[:profile]) || Profile.create!(user: current_user)
     case step
     when :complete_profile
-      binding.pry 
     end
     render_wizard
   end

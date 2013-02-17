@@ -1,13 +1,13 @@
 class Profile < ActiveRecord::Base
-  attr_accessible :email, :full_name, :gender, :image, :location, :user, :address, :user_attributes
-  belongs_to :user
+  attr_accessible :full_name, :gender, :image, :location, :user, :address, :user_attributes
+  belongs_to :user, :dependent => :destroy
 
   def complete?
-    status = true
-    status = false if  self.email.blank?  || (/@missing.com/.match(self.email))
-    status = false  if self.address.blank?
-    status = false  if self.gender.blank?
-    status
+    state = true
+    self.attributes.each do |key, value|
+      state = false if value.blank?
+    end
+    state
   end
   
 end

@@ -8,14 +8,12 @@
       Almost there:
     = semantic_form_for @profile do |f|
       = f.inputs do
-        - unless @user.email
+        - unless @profile.user.email
           = f.semantic_fields_for :user do |u|
             = u.input :email 
-            
-        - unless @profile.full_name
-          = f.input :full_name
-
+        = f.input :full_name
         = f.input :gender,  :as => :select,      :collection => ["Male", "Female"]
+        = f.input :location, :as => :text
         = f.input :address, :as => :text
         = f.action :submit, label: "Complete Sign Up", :input_html => { :class => "btn btn-success" }
 
