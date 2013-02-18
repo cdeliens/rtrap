@@ -8,9 +8,9 @@
       Almost there:
     = semantic_form_for @profile do |f|
       = f.inputs do
-        - unless @profile.user.email
-          = f.semantic_fields_for :user do |u|
-            = u.input :email 
+        / - unless @profile.user.email
+        /   = f.semantic_fields_for :user do |u|
+        /     = u.input :email 
         = f.input :full_name
         = f.input :gender,  :as => :select,      :collection => ["Male", "Female"]
         = f.input :location, :as => :text

@@ -2,6 +2,8 @@ class AfterSignupController < ApplicationController
   include Wicked::Wizard
   steps :complete_profile
   def show
+
+    binding.pry
     if current_user.blank?
       user = User.new(params[:user])
       current_user = (user.save) ? user : (redirect_to new_user_registration_path and return)
