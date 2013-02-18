@@ -4,16 +4,17 @@ class RegistrationsController < Devise::RegistrationsController
   end
 
   def create
-    @user = User.new(params[:user])
-    if @user.save
-      sign_in(@user)
-      redirect_to after_signup_path(:complete_profile)
-    else
-      redirect_to :back
-    end
+    super
   end
 
   def update
     super
   end
+
+  protected
+
+  def after_sign_in_path_for(resource)
+    after_signup_path(:complete_profile, user_id: current_user.id )
+  end
+
 end
