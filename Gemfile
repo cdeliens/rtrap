@@ -30,6 +30,7 @@ group :production do
 end
 
 gem 'bootstrap-sass'
+gem 'active_admin_editor'
 gem 'formtastic'
 gem 'formtastic-bootstrap'
 gem 'inherited_resources'

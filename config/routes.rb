@@ -2,6 +2,8 @@ Rtrap::Application.routes.draw do
   
   resources :after_signup
   resources :profiles
+  resources :pages
+  resources :assets
   
   get "chats/room"
   get   '/login', :to => 'third_party_sessions#new', :as => :login
