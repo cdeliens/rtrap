@@ -29,6 +29,7 @@ group :production do
   gem 'thin'
 end
 
+gem 'devise'
 gem 'bootstrap-sass'
 gem 'formtastic'
 gem 'formtastic-bootstrap'
@@ -36,7 +37,6 @@ gem 'inherited_resources'
 gem 'wicked'
 gem "haml-rails"
 gem 'jquery-rails'
-gem 'activeadmin'
 gem "meta_search",    '>= 1.1.0.pre'
 gem 'omniauth'
 gem 'omniauth-twitter'

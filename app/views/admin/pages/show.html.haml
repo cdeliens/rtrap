@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Title:
+  = @admin_page.title
+%p
+  %b Body:
+  = @admin_page.body
+
+= link_to 'Edit', edit_admin_page_path(@admin_page)
+\|
+= link_to 'Back', admin_pages_path
