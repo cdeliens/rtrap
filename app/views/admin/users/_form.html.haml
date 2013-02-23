@@ -1,0 +1,13 @@
+#admin_form
+  = semantic_form_for [:admin, @user] do |f|
+    = f.inputs do
+      = f.input :username,  input_html: {class: 'span5'}, placeholder: "Enter username"
+      = f.input :email,  input_html: {class: 'span5'}, placeholder: "Enter email"
+      = f.semantic_fields_for :profile do |p|
+        = p.input :full_name
+        = p.input :gender
+        = p.label :image
+        = image_tag @user.profile.image
+        = p.input :location
+        = p.input :address
+      = f.action :submit, :as => :button, button_html: {class: 'pull_left btn btn-success'}, placeholder: "Enter title..."
