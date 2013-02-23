@@ -1,0 +1,5 @@
+.box.span12
+  %h1 
+    Users
+  = create_table_for User, @users_grid, ["id", "created_at", "updated_at", "email", "username"]      
+

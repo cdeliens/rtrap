@@ -27,6 +27,7 @@ Rtrap::Application.routes.draw do
   namespace :admin do
     resources :dashboards
     resources :pages
+    resources :users
   end
 
   root :to    => "admin/dashboards#index"

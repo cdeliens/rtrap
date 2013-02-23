@@ -1,16 +1,5 @@
 .box.span12
-  .box-header
-    %h2 
-      %i.halflings-icon.user
-      %span.break
-      Pages
-    .box-icon
-      %a{href: "#", class: 'btn-setting'}
-      %a{href: "#", class: 'btn-minimize'}
-      %a{href: "#", class: 'btn-close'}
-    
-  .box-content
-    %h1 Pages list
-    = create_table_for Page, @pages_grid
-        
+  %h1 
+    Pages
+  = create_table_for Page, @pages_grid      
 
