@@ -12,10 +12,10 @@ module Admin::AdminHelper
         end
       end
       g.column :name => "Actions" do |item|
-        content_tag :div, nil, class: "span1" do
-          link_to( content_tag(:i, "", class: "halflings-icon zoom-in halflings-icon"), "",  class: "btn btn-success" ) +
-          link_to( content_tag(:i, "",class: "halflings-icon edit halflings-icon"), "",  class: "btn btn-info" ) +
-          link_to( content_tag(:i, "",class: "halflings-icon trash halflings-icon"), "",  class: "btn btn-danger" )
+        content_tag :div, nil, class: "actions span" do
+          link_to( content_tag(:i, "", class: "halflings-icon zoom-in halflings-icon"), url_for([:admin, item]),  class: "btn btn-success" ) +
+          link_to( content_tag(:i, "",class: "halflings-icon edit halflings-icon"), url_for([:edit, :admin, item]),  class: "btn btn-info" ) +
+          link_to( content_tag(:i, "",class: "halflings-icon trash halflings-icon"), item, method: :delete,   class: "btn btn-danger" )
         end
       end
     end

@@ -1,5 +1,5 @@
 .box.span12
   %h1 
     Pages
-  = create_table_for Page, @pages_grid      
+  = create_table_for Page, @pages_grid, ["id", "title","created_at", "updated_at"]      
 

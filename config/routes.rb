@@ -4,6 +4,7 @@ Rtrap::Application.routes.draw do
 
   resources :after_signup
   resources :profiles
+  resources :pages
   
   get "chats/room"
   get   '/login', :to => 'third_party_sessions#new', :as => :login
@@ -27,7 +28,11 @@ Rtrap::Application.routes.draw do
   namespace :admin do
     resources :dashboards
     resources :pages
-    resources :users
+    resources :users do
+      collection do
+        delete :destroy
+      end
+    end
   end
 
   root :to    => "admin/dashboards#index"
