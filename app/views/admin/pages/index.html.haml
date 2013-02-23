@@ -1,21 +1,16 @@
-%h1 Listing admin_pages
+.box.span12
+  .box-header
+    %h2 
+      %i.halflings-icon.user
+      %span.break
+      Pages
+    .box-icon
+      %a{href: "#", class: 'btn-setting'}
+      %a{href: "#", class: 'btn-minimize'}
+      %a{href: "#", class: 'btn-close'}
+    
+  .box-content
+    %h1 Pages list
+    = create_table_for Page, @pages_grid
+        
 
-/ %table
-/   %tr
-/     %th Title
-/     %th Body
-/     %th
-/     %th
-/     %th
-
-/   - @admin_pages.each do |admin_page|
-/     %tr
-/       %td= admin_page.title
-/       %td= admin_page.body
-/       %td= link_to 'Show', admin_page
-/       %td= link_to 'Edit', edit_admin_page_path(admin_page)
-/       %td= link_to 'Destroy', admin_page, method: :delete, data: { confirm: 'Are you sure?' }
-
-/ %br
-
-/ = link_to 'New Page', new_admin_page_path

@@ -141,12 +141,12 @@ $(document).ready(function(){
 	});
 			
 	/* ---------- Acivate Functions ---------- */
-	template_functions();
-	init_masonry();
-	sparkline_charts();
-	charts();
-	calendars();
-	growlLikeNotifications();
+	// template_functions();
+	// init_masonry();
+	// sparkline_charts();
+	// charts();
+	// calendars();
+	// growlLikeNotifications();
 	widthFunctions();
 	
 	if(jQuery.browser.version.substring(0, 2) == "8.") {
