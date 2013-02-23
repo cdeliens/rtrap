@@ -1,0 +1,38 @@
+!!!
+%html
+  %head
+    %title Rtrap Admin
+    = stylesheet_link_tag "admin/application", :media => "all"
+    = javascript_include_tag "admin/application"
+    = csrf_meta_tags
+  %body
+    .navbar
+      .navbar-inner
+        .container-fluid
+        .brand
+          %a{href: home_static_pages_path}
+            .span BECE
+  .container-fluid
+    .row-fluid
+      #sidebar-left.span1
+        .nav-collapse.sidebar-nav
+          %ul.nav.nav-tabs.nav-stacked.main-menu
+            %li
+              %a{href: admin_dashboards_path}
+                %i.fa-icon-bar-chart
+                %span.hidden-tablet
+                  Dashboard
+            %li
+              %a{href: admin_pages_path}
+                %i.fa-icon-edit
+                %span.hidden-tablet
+                  Pages
+            %li
+              %a{href: admin_users_path}
+                %i.fa-icon-group
+                %span.hidden-tablet
+                  Users
+      
+      #content.span11
+        .row-fluid.sortable
+          = yield

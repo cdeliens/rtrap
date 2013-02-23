@@ -1,7 +1,10 @@
 Rtrap::Application.routes.draw do
   
+  namespace :admin do resources :pages end
+
   resources :after_signup
   resources :profiles
+  resources :pages
   
   get "chats/room"
   get   '/login', :to => 'third_party_sessions#new', :as => :login
@@ -13,12 +16,25 @@ Rtrap::Application.routes.draw do
 
   devise_for :users
   resources :users, only: [:index, :show, :edit, :update]
-
-  ActiveAdmin.routes(self)
-  devise_for :admin_users, ActiveAdmin::Devise.config
+  devise_for :admin_users
 
   get  '/chatroom' => 'chats#room', :as => :chat
 
-  root :to    => "static_pages#home"
+  resources :static_pages, only: [] do
+    collection do
+      get :home
+    end
+  end
+  namespace :admin do
+    resources :dashboards
+    resources :pages
+    resources :users do
+      collection do
+        delete :destroy
+      end
+    end
+  end
+
+  root :to    => "admin/dashboards#index"
 
 end
