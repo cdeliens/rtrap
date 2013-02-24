@@ -7,15 +7,13 @@ class User < ActiveRecord::Base
   attr_accessible  :username, :password, :password_confirmation, :remember_me, :email
   has_many :authorizations, :dependent => :destroy
 
-  validates_presence_of :email, :allow_blank => true, if: :email_required? 
-
   def add_provider(auth_hash)
     unless authorizations.find_by_provider_and_uid(auth_hash["provider"], auth_hash["uid"])
       Authorization.create :user => self, :provider => auth_hash["provider"], :uid => auth_hash["uid"]
     end
   end
 
-  def self.email_required?
+  def email_required?
     super && authorizations.blank?
   end
 
