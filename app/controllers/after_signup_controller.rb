@@ -6,7 +6,7 @@ class AfterSignupController < ApplicationController
   steps :complete_profile
 
   def show
-    @profile = Profile.find_by_id(params[:profile]) || Profile.create!(user: current_user)
+    @profile = Profile.find_by_id(params[:profile]) || Profile.create!(user: @current_user)
     case step
     when :complete_profile
     end
@@ -21,6 +21,6 @@ class AfterSignupController < ApplicationController
     elsif session[:user_id]
       @current_user = User.find(session[:user_id])
     end
-    sign_in(@current_user)
+    sign_in(@current_user) if @current_user
   end
 end
