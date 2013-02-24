@@ -1,19 +1,33 @@
-.container
-  %nav
-    %ul#user_nav.nav.nav-tabs
-      %li
-        = image_tag @profile.image, width: 30, height: 30 , class: :profile_picture if @profile
-      - if user_signed_in?
+.container.navbar
+  .navbar-inner 
+    = link_to "Rtrap", "#", class: "brand"
+    #user_nav.nav-collapse.navbar-responsive-collapse.collapse
+      %ul.nav.pull-left
+        %li.active
+          = link_to "Home", root_path
+
+      %ul.nav.pull-right
         %li
-          %span= "Signed in as #{current_user.email}"
-        %li
-          = link_to "Sign out ", destroy_user_session_path, :method => :delete
-      - else
-        %li
-          = link_to "Sign up", new_user_registration_path
-        %li
-          = link_to "Sign in", new_user_session_path
-        %li
-          = link_to "Sign in with Facebook", "/auth/facebook/",  id: 'sign_in_with_facebook'
-        %li
-          = link_to "Sign in with Twitter", "/auth/Twitter/"
+          %form.navbar-search
+            %input.search-query{:placeholder => "Search", :type => "text"}
+        - if user_signed_in?
+          %li
+            %p= "Signed in as #{current_user.email}"
+          %li
+            = image_tag @profile.image, width: 30, height: 30 , class: :profile_picture if @profile
+          %li.divider-vertical
+          %li
+            = link_to "Sign out ", destroy_user_session_path, :method => :delete
+        - else
+          %li
+            = link_to "Sign up", new_user_registration_path
+          %li
+            = link_to "Sign in", new_user_session_path
+          %li
+            = link_to "Sign in with Facebook", "/auth/facebook/",  id: 'sign_in_with_facebook'
+          %li
+            = link_to "Sign in with Twitter", "/auth/Twitter/"
+
+        
+
+        
