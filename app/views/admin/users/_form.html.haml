@@ -3,6 +3,7 @@
     = f.inputs do
       = f.input :username,  input_html: {class: 'span5'}, placeholder: "Enter username"
       = f.input :email,  input_html: {class: 'span5'}, placeholder: "Enter email"
+      = f.input :roles, as: :select
       = f.semantic_fields_for :profile do |p|
         = p.input :full_name
         = p.input :gender

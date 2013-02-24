@@ -29,6 +29,7 @@ group :production do
   gem 'thin'
 end
 
+gem 'cancan'
 gem "bootstrap-wysihtml5-rails"
 gem 'will_paginate', '~> 3.0'
 gem "wice_grid", '3.2.0.pre1'

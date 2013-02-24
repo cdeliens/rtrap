@@ -32,7 +32,11 @@
                 %i.fa-icon-group
                 %span.hidden-tablet
                   Users
-      
+            %li
+              %a{href: admin_roles_path}
+                %i.fa-icon-user-md
+                %span.hidden-tablet
+                  Roles
       #content.span11
         .row-fluid.sortable
           = yield

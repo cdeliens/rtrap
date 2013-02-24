@@ -1,0 +1,5 @@
+#admin_form
+  = semantic_form_for [:admin, @role] do |f|
+    = f.inputs do
+      = f.input :name,  input_html: {class: 'span11'}, placeholder: "Enter role..."
+      = f.action :submit, :as => :button, button_html: {class: 'pull_left btn btn-success'}, placeholder: "Enter title..."
