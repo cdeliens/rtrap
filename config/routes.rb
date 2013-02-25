@@ -16,7 +16,7 @@ Rtrap::Application.routes.draw do
   match 'signout', to: 'third_party_sessions#destroy', as: 'signout'
   
 
-  devise_for :users
+  devise_for :users, :controllers => {:registrations => "registrations"}
   resources :users, only: [:index, :show, :edit, :update]
   devise_for :admin_users
 

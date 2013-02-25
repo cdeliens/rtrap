@@ -7,6 +7,7 @@ class ThirdPartySessionsController < ApplicationController
     auth = Authorization.find_or_create(auth_hash)
     session[:user_id] = auth.user.id
     if auth.user.profile.complete?
+      sign_in(auth.user)
       redirect_to profile_path(auth.user.profile)
     else
       redirect_to after_signup_path(:complete_profile, profile: auth.user.profile)

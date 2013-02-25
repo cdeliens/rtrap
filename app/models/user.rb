@@ -19,4 +19,9 @@ class User < ActiveRecord::Base
   def role?(role)
       return !!self.roles.find_by_name(role.to_s.camelize)
   end
+
+  def email_required?
+    super && authorizations.blank?
+  end
+
 end
