@@ -5,11 +5,9 @@
       %ul.nav.pull-left
         %li.active
           = link_to "Home", root_path
-
-      %ul.nav.pull-right
         %li
-          %form.navbar-search
-            %input.search-query{:placeholder => "Search", :type => "text"}
+          = link_to "Admin", admin_dashboards_path
+      %ul.nav.pull-right
         - if user_signed_in?
           %li
             %p= "Signed in as #{current_user.email}"

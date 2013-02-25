@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   # Setup accessible (or protected) attributes for your model
-  attr_accessible  :username, :password, :password_confirmation, :remember_me, :email, :profile, :profile_attributes, :role_ids
+  attr_accessible  :username, :password, :password_confirmation, :remember_me, :email, :profile, :profile_attributes, :role_ids, :provider
   has_many :authorizations, :dependent => :destroy
   has_and_belongs_to_many :roles
 
@@ -21,7 +21,7 @@ class User < ActiveRecord::Base
   end
 
   def email_required?
-    super && authorizations.blank?
+    super && provider.blank?
   end
 
 end

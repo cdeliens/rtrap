@@ -11,8 +11,12 @@ class Authorization < ActiveRecord::Base
   end
 
   def self.create_complete_user auth_hash
-    email = auth_hash["info"]["email"].present? ? auth_hash["info"]["email"] : auth_hash["info"]["nickname"] + "@missing.com"
-    user = User.create( :username => auth_hash["info"]["nickname"] , :password => "deliens", :password_confirmation => "deliens", :email => email)
+    user = User.create( :username => auth_hash["info"]["nickname"] , 
+                                       :password => "deliens", 
+                                       :password_confirmation => "deliens", 
+                                       :email => auth_hash["info"]["email"] ,
+                                       :provider =>  auth_hash[:provider] )
+    
     profile = ProfileFactory.send( auth_hash[:provider], user, auth_hash)
     auth = create :user => user, :provider => auth_hash["provider"], :uid => auth_hash["uid"]
   end

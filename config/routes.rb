@@ -34,6 +34,6 @@ Rtrap::Application.routes.draw do
     resources :users
   end
 
-  root :to    => "admin/dashboards#index"
+  root :to    => "static_pages#home"
 
 end
