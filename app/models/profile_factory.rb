@@ -27,8 +27,7 @@ class ProfileFactory
         user: {
           username: auth_hash["info"]["nickname"],
           password: auth_hash["extra"]["access_token"].params["oauth_token"],
-          password_confirmation: auth_hash["extra"]["access_token"].params["oauth_token"],
-          email: auth_hash["info"]["nickname"] + "@missing.com"
+          password_confirmation: auth_hash["extra"]["access_token"].params["oauth_token"]
         }
       }
       factory user, translated_data

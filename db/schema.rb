@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130219022722) do
+ActiveRecord::Schema.define(:version => 20130225014537) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -64,13 +64,6 @@ ActiveRecord::Schema.define(:version => 20130219022722) do
     t.datetime "oauth_expires_at"
   end
 
-  create_table "pages", :force => true do |t|
-    t.string   "title"
-    t.string   "body"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
   create_table "profiles", :force => true do |t|
     t.integer  "user_id"
     t.string   "image"
@@ -82,7 +75,19 @@ ActiveRecord::Schema.define(:version => 20130219022722) do
     t.string   "address"
   end
 
+  create_table "roles", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "roles_users", :id => false, :force => true do |t|
+    t.integer "role_id"
+    t.integer "user_id"
+  end
+
   create_table "users", :force => true do |t|
+    t.string   "email",                  :default => "", :null => false
     t.string   "encrypted_password",     :default => "", :null => false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
@@ -94,10 +99,11 @@ ActiveRecord::Schema.define(:version => 20130219022722) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
-    t.string   "email"
     t.string   "username"
+    t.string   "provider"
   end
 
+  add_index "users", ["email"], :name => "index_users_on_email", :unique => true
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
 
 end
