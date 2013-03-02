@@ -49,6 +49,7 @@ gem 'omniauth-twitter'
 gem 'omniauth-facebook'
 gem 'instagram'
 gem "heroku"
+gem 'client_side_validations'
 
 group :test do
   gem "rspec-rails", "= 2.9"
