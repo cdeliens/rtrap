@@ -9,8 +9,8 @@ class User < ActiveRecord::Base
   has_and_belongs_to_many :roles
 
   accepts_nested_attributes_for :profile
-  validates :email, :presence => true, if: 'provider.nil?'
-  validates :password, :presence => true
+  # validates :email, :presence => true, if: 'provider.nil?'
+  # validates :password, :presence => true
 
   def add_provider(auth_hash)
     unless authorizations.find_by_provider_and_uid(auth_hash["provider"], auth_hash["uid"])
