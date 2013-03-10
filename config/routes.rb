@@ -1,6 +1,5 @@
 Rtrap::Application.routes.draw do
   
-  namespace :admin do resources :pages end
 
   resources :after_signup
   resources :profiles

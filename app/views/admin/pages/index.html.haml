@@ -1,5 +1,11 @@
 .box.span12
   %h1 
     Pages
+  %a{ href: new_admin_page_path }
+    %btn.btn.btn-small
+      %i.halflings-icon.plus
+      New
+    
+
   = create_table_for Page, @pages_grid, ["id", "title","created_at", "updated_at"]      
 

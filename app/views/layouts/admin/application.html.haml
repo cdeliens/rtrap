@@ -1,17 +1,24 @@
 !!!
 %html
   %head
-    %title Rtrap Admin
+    %title Admin Console
     = stylesheet_link_tag "admin/application", :media => "all"
     = javascript_include_tag "admin/application"
     = csrf_meta_tags
   %body
     .navbar
       .navbar-inner
-        .container-fluid
-        .brand
-          %a{href: home_static_pages_path}
-            .span BECE
+        .container-fluid        
+          %a{href: home_static_pages_path, class: :brand}
+            %i.halflings-icon.white.qrcode
+            %span Admin Console
+          .nav-no-collapse.header-nav
+            %ul.nav.pull-right
+              %li
+                %a{href: profile_path(current_user.profile), class: :btn}
+                  %i.halflings-icon.white.user
+                  = current_user.email
+
   .container-fluid
     .row-fluid
       #sidebar-left.span1

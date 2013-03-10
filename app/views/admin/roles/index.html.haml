@@ -1,5 +1,9 @@
 .box.span12
   %h1 
     Roles
+  %a{ href: new_admin_role_path }
+    %btn.btn.btn-small
+      %i.halflings-icon.plus
+      New
   = create_table_for Role, @roles_grid
 
