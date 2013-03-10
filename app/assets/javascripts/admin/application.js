@@ -12,10 +12,8 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require jquery.turbolinks
 //= require_tree ../../../../vendor/assets/javascripts/admin
 //= require wice_grid
 //= require_tree .
 //= require bootstrap-wysihtml5
 //= require bootstrap-wysihtml5/locales
-//= require turbolinks

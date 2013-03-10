@@ -1,4 +1,5 @@
 class Admin::RolesController < InheritedResources::Base
+    before_filter :verify_admin_authorizations
     layout "admin/application"
     def new
       @role = Role.new

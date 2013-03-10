@@ -3,10 +3,11 @@
     = link_to "TANE", "#", class: "brand"
     #user_nav.nav-collapse.navbar-responsive-collapse.collapse
       %ul.nav.pull-left
-        %li.active
+        %li.active{"data-no-turbolink" => true}
           = link_to "Home", root_path
-        %li
-          = link_to "Admin", admin_dashboards_path
+        - if can? :manage, :admin
+          %li
+            = link_to "Admin", admin_dashboards_path
       %ul.nav.pull-right
         - if user_signed_in?
           %li
